@@ -92,29 +92,30 @@ def chio_determinant(matrix: Matrix):
     rows, cols = matrix.size()
     if rows != cols:
         return None
-    multiplier = 1
-    return recursive_chio(matrix, multiplier)
+    return recursive_chio(matrix, 1)
 
 
-m1 = Matrix([
-[5, 1, 1, 2, 3],
-[4, 2, 1, 7, 3],
-[2, 1, 2, 4, 7],
-[9, 1, 0, 7, 0],
-[1, 4, 7, 2, 2]])
+if __name__ == "__main__":
 
-# przy liczeniu tego wyznacznika trzeba zamienić kolejność wierszy tak by element a11 nie był zerem,
-# a nastepnie pomnozyc wyznacznik przez -1 (z wlasnosci wyznacznikow), w tym celu zaimplementowalem
-# metode klasy Matrix swap_rows() do zamiany wierszy oraz funkcje eliminate_zero_from_a11() ktora dokonuje
-# odpowiedniej zamiany wtedy gdy jest to potrzebne
+    m1 = Matrix([
+    [5, 1, 1, 2, 3],
+    [4, 2, 1, 7, 3],
+    [2, 1, 2, 4, 7],
+    [9, 1, 0, 7, 0],
+    [1, 4, 7, 2, 2]])
 
-m2 = Matrix([
-[0, 1, 1, 2, 3],
-[4, 2, 1, 7, 3],
-[2, 1, 2, 4, 7],
-[9, 1, 0, 7, 0],
-[1, 4, 7, 2, 2]
-])
+    # przy liczeniu tego wyznacznika trzeba zamienić kolejność wierszy tak by element a11 nie był zerem,
+    # a nastepnie pomnozyc wyznacznik przez -1 (z wlasnosci wyznacznikow), w tym celu zaimplementowalem
+    # metode klasy Matrix swap_rows() do zamiany wierszy oraz funkcje eliminate_zero_from_a11() ktora dokonuje
+    # odpowiedniej zamiany wtedy gdy jest to potrzebne
 
-print(chio_determinant(m1))
-print(chio_determinant(m2))
+    m2 = Matrix([
+    [0, 1, 1, 2, 3],
+    [4, 2, 1, 7, 3],
+    [2, 1, 2, 4, 7],
+    [9, 1, 0, 7, 0],
+    [1, 4, 7, 2, 2]
+    ])
+
+    print(chio_determinant(m1))
+    print(chio_determinant(m2))

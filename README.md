@@ -7,3 +7,4 @@ First part (1-7) contains Data Structures and second part (8-14) algorithms.
 ### Contents
 
 * 1 - represantation of matrix, Chio determinant
+* 2 - linked list, doubly linked list

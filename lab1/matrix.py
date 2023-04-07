@@ -52,6 +52,9 @@ class Matrix:
     def size(self):
         return len(self.matrix), len(self.matrix[0])
 
+    def swap_rows(self, i, j):
+        self.matrix[i], self.matrix[j] = self.matrix[j], self.matrix[i]
+
 
 def transpose(matrix: Matrix) -> Matrix:
     rows, cols = matrix.size()

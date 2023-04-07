@@ -26,6 +26,7 @@ class CircularQueue:
         return self.queue[self.read]
 
     def realloc(self):
+        # doubling the space and moving elements to remain circular
         old_size = self.size
         self.size = 2 * self.size
         self.queue = [self.queue[x] if x < self.write else

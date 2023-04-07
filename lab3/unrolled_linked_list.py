@@ -22,7 +22,7 @@ class Node:
 
     def delete_by_index(self, index):
         for i in range(index, size-1):
-            self.table[i] = self.table[i+1]
+            self.table[i] = self.table[i + 1]
         self.table[-1] = None
 
     def is_overloaded(self):
@@ -77,6 +77,7 @@ class UnrolledLinkedList:
         node.delete_by_index(insert_index)
         node.content -= 1
         self.sum_of_content -= 1
+        # this doesn't look good but have no clue how to make it better ;(
         if node.content < 3:
             if node.next is not None:
                 if node.next.content <= int(size/2):
@@ -95,25 +96,26 @@ class UnrolledLinkedList:
             node = node.next
 
     def add_new_node_and_split_data(self, node):
-        # przepiecie
+        # adding new node between two already existing
         new_node = Node()
         new_node.next = node.next
         node.next = new_node
         if new_node.next is None:
             self.tail = new_node
 
-        # przepisanie
+        # rewriting elements
         for i in range(0, int(size/2)):
-            new_node.table[i] = node.table[int(size/2) + i]
+            new_node.table[i] = node.table[int(size / 2) + i]
             node.table[int(size / 2) + i] = None
 
-        # aktualizacja ilosci w danym nodzie
+        # updating contents of nodes
         node.content = int(size/2)
         new_node.content = int(size/2)
 
     def rewrite_to_previous_node(self, node, next_node):
+        # rewriting elements to previous node
         for i in range(next_node.content):
-            node.add_by_index(next_node[i], i + node.content)
+            node.add_by_index(next_node.table[i], i + node.content)
         node.content += next_node.content
         if next_node.next is None:
             self.tail = node
@@ -124,7 +126,7 @@ class UnrolledLinkedList:
 
 
 lista = UnrolledLinkedList()
-for i in range(1, 9):
+for i in range(1, 10):
     lista.insert(data=i, index=i-1)
 print(lista.get(4))
 lista.insert(data=10, index=1)

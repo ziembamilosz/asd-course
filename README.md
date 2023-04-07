@@ -11,4 +11,5 @@ First part (1-7) contains data structures and second part (8-14) algorithms.
 * 3 - circular array, unrolled linked list
 * 4 - hash table, skip list
 * 5 - binary tree, AVL binary tree
+* 6 - priority queue, B-tree
 * extra - quicksort, bubblesort, graph traversing DFS and BFS

@@ -11,5 +11,9 @@ First part (1-7) contains data structures and second part (8-14) algorithms.
 * 3 - circular array, unrolled linked list
 * 4 - hash table, skip list
 * 5 - binary tree, AVL binary tree
-* 6 - priority queue, B-tree
+* 6 - priority queue
+* 7 - graph implementation, coloring a graph
+* 8 - heapsort, shellsort, selection sort
+* 9 - Prim's and Kruskal's algorithm for MST
+* 10 - Ford Fulkerson algorithm
 * extra - quicksort, bubblesort, graph traversing DFS and BFS

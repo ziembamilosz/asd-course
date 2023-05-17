@@ -47,8 +47,8 @@ class PriorityQueue:
         if self.is_empty():
             return None
         result = self.table[0]
-        self.swap(0, self.size-1)
         self.size -= 1
+        self.swap(0, self.size)
         self.heapify()
         return result
 
@@ -73,25 +73,24 @@ class PriorityQueue:
         while index < self.size - 1:
             left = self.left(current)
             right = self.right(current)
-            if left < self.size and self.table[left] > self.table[index]:
+            if left < self.size and not (self.table[left] < self.table[index]):
                 index = left
-            if right < self.size and self.table[right] > self.table[index]:
+            if right < self.size and not (self.table[right] < self.table[index]):
                 index = right
             if index == current:
                 break
-            else:
-                self.swap(current, index)
-                current = index
+            self.swap(current, index)
+            current = index
 
     # methods allowing easier traversing a heap
     def left(self, index):
-        return 2*index + 1
+        return 2 * index + 1
 
     def right(self, index):
-        return 2*index + 2
+        return 2 * index + 2
 
     def parent(self, index):
-        return (index-1)//2
+        return (index - 1) // 2
 
     def swap(self, i, j):
         self.table[i], self.table[j] = self.table[j], self.table[i]

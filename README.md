@@ -16,4 +16,8 @@ First part (1-7) contains data structures and second part (8-14) algorithms.
 * 8 - heapsort, shellsort, selection sort
 * 9 - Prim's and Kruskal's algorithm for MST
 * 10 - Ford Fulkerson algorithm
+* 11 - Ullman's algorithm
+* 12 - Searching pattern in text
+* 13 - String matching
+* 14 - Convex hull
 * extra - quicksort, bubblesort, graph traversing DFS and BFS
